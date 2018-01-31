@@ -427,18 +427,19 @@ class RESTfulAPI extends Controller
     }
 
     //check if Origin is allowed
-    $allowedOrigin = $cors['Allow-Origin'];
-      $requestOrigin = $this->request->getHeader('Origin');
-      if ($requestOrigin) {
-          if ($cors['Allow-Origin'] === '*') {
-              $allowedOrigin = $requestOrigin;
-          } elseif (is_array($cors['Allow-Origin'])) {
-              if (in_array($requestOrigin, $cors['Allow-Origin'])) {
-                  $allowedOrigin = $requestOrigin;
-              }
-          }
-      }
-      $answer->addHeader('Access-Control-Allow-Origin', $allowedOrigin);
+//    $allowedOrigin = $cors['Allow-Origin'];
+//      $requestOrigin = $this->request->getHeader('Origin');
+//      if ($requestOrigin) {
+//          if ($cors['Allow-Origin'] === '*') {
+//              $allowedOrigin = $requestOrigin;
+//          } elseif (is_array($cors['Allow-Origin'])) {
+//              if (in_array($requestOrigin, $cors['Allow-Origin'])) {
+//                  $allowedOrigin = $requestOrigin;
+//              }
+//          }
+//      }
+//      $answer->addHeader('Access-Control-Allow-Origin', $allowedOrigin);
+      $answer->('Access-Control-Allow-Origin', '*');
     
     //allowed headers
     $allowedHeaders = '';
