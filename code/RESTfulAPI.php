@@ -439,7 +439,7 @@ class RESTfulAPI extends Controller
 //          }
 //      }
 //      $answer->addHeader('Access-Control-Allow-Origin', $allowedOrigin);
-      $answer->('Access-Control-Allow-Origin', '*');
+//      $answer->('Access-Control-Allow-Origin', '*');
     
     //allowed headers
     $allowedHeaders = '';
